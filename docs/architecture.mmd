@@ -1,0 +1,33 @@
+flowchart LR
+  subgraph browser [Browser, chasqui.neorgon.com]
+    UI[index.html + js/*.js<br/>window, composer, wiring]
+    LS[(localStorage<br/>composer fields)]
+    UI --- LS
+  end
+
+  subgraph convex [Convex deployment]
+    A[aisensy:send<br/>action]
+    Q[messages:thread<br/>messages:stats<br/>config:status]
+    RL[rateLimit<br/>per number, global]
+    H[http.ts<br/>POST /aisensy/webhook]
+    DB[(contacts<br/>messages<br/>sendEvents)]
+    ENV[env: AISENSY_API_KEY<br/>AISENSY_WEBHOOK_TOKEN<br/>AISENSY_CAMPAIGNS<br/>AISENSY_ALLOWED_DESTINATIONS]
+  end
+
+  AIS[AiSensy<br/>campaign/t1/api/v2]
+  WA((WhatsApp<br/>+1 555 331 0925))
+  P[Person's phone]
+
+  UI -- "action: number, name,<br/>campaign, params" --> A
+  A --> RL
+  A -- "log queued, then result" --> DB
+  A -- "POST with the key<br/>read from env" --> AIS
+  ENV -.-> A
+  ENV -.-> H
+  AIS -- "template message" --> WA --> P
+  P -- "reply / delivery event" --> AIS
+  AIS -- "webhook, token in URL" --> H
+  H -- "log inbound" --> DB
+  DB -- "reactive queries" --> Q
+  Q -- "live thread" --> UI
+  UI -- "wa.me deep link" --> WA

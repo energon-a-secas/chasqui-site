@@ -1,0 +1,13 @@
+{
+  "name": "chasqui-site",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WhatsApp relay for Neorgon through AiSensy, Convex backend",
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/*.test.mjs"
+  },
+  "dependencies": {
+    "convex": "^1.43.0"
+  },
+  "type": "module"
+}

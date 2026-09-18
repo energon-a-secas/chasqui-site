@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Chasqui">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="neo-mark" content="on">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; script-src 'self' 'unsafe-inline' https://esm.sh https://cdn.neorgon.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.neorgon.org; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://cdn.neorgon.org; connect-src 'self' https://esm.sh https://*.convex.cloud wss://*.convex.cloud; frame-src 'none'; worker-src 'self'">
+  <title>Chasqui | WhatsApp Relay</title>
+  <meta name="description" content="Send WhatsApp template notifications from Neorgon through AiSensy and watch every send, refusal and reply land in one live thread">
+  <meta property="og:title" content="Chasqui | WhatsApp Relay">
+  <meta property="og:description" content="WhatsApp notifications for Neorgon, relayed through AiSensy with a live thread">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chasqui.neorgon.com/">
+  <meta property="og:site_name" content="Neorgon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Chasqui | WhatsApp Relay">
+  <meta name="twitter:description" content="WhatsApp notifications for Neorgon, relayed through AiSensy with a live thread">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://chasqui.neorgon.com/">
+  <meta property="og:locale" content="en_US">
+  <meta name="theme-color" content="#040714">
+  <meta property="og:image" content="https://chasqui.neorgon.com/og-preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Chasqui">
+  <meta name="twitter:image" content="https://chasqui.neorgon.com/og-preview.jpg">
+  <!-- Fleet design tokens: canonical, do not redeclare locally (docs/references/new-project-context.md, Design) -->
+  <link rel="stylesheet" href="https://cdn.neorgon.org/v1.0.0/styles/base.css">
+  <meta name="neo-repo" content="https://github.com/energon-a-secas/chasqui-site">
+  <meta name="neo-version" content="0.1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Neorgon Header Kit (vendored; ?header=live swaps CSS to CDN). Keep after style.css, the kit owns the header. -->
+  <script>(function(){var m=location.search.match(/[?&]theme=([\w-]+)/)||document.cookie.match(/(?:^|;\s*)neo_theme=([\w-]+)/);if(m&&m[1]!=='default')document.documentElement.dataset.theme=decodeURIComponent(m[1]);})();</script>
+  <link rel="stylesheet" href="css/neorgon-header.css">
+  <link rel="stylesheet" href="css/neorgon-themes.css">
+  <link rel="stylesheet" href="https://cdn.neorgon.org/v1.0.0/header/season.css">
+  <script defer src="js/neorgon-header.js"></script>
+  <!-- Neorgon Footer Kit (vendored). Pins the footer to the viewport floor on short
+       pages and builds the meta bar + back-to-top. See packages/neorgon-ui/footer/README.md.
+       Optional stamps: <meta name="neo-repo"|"neo-version"|"neo-updated"> -->
+  <link rel="stylesheet" href="css/neorgon-footer.css">
+  <script defer src="js/neorgon-footer.js"></script>
+  <!-- Neorgon Beacon Kit (vendored). Bottom-left correction reporter: it
+       carries page context to balise.neorgon.com in a URL fragment and the
+       visitor writes there. No form on this page and no request from it.
+       Opt out per page with <meta name="beacon" content="off">.
+       See packages/neorgon-ui/beacon/README.md. -->
+  <meta name="beacon-site" content="chasqui-site">
+  <link rel="stylesheet" href="css/neorgon-beacon.css">
+  <script defer src="js/neorgon-beacon.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Chasqui",
+    "description": "WhatsApp relay for Neorgon: send template notifications through AiSensy and watch the thread live",
+    "url": "https://chasqui.neorgon.com/",
+    "applicationCategory": "CommunicationApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Organization", "name": "Neorgon", "url": "https://neorgon.com/" }
+  }
+  </script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Neorgon Header Kit contract (packages/neorgon-ui/header/README.md).
+       data-header-mode: hub (glass) | content (sticky gradient) | app (slim, auto-hides on scroll).
+       Pick content for learning/content sites, app for tool-dense sites. -->
+  <header class="header-bar" data-header-mode="app">
+    <div class="header-logo">
+      <!-- PATTERN: one link: mark + name go to THIS site's home (root or #home)
+           so clicking either resets the view. The planet icon in .header-right
+           is the only header link to neorgon.com. -->
+      <a href="./" class="header-title-link">
+        <img src="https://cdn.neorgon.org/v1.0.0/energon-classic-logo.png" class="header-logo-img" alt="">
+        <div class="header-title-wrap">
+          <h1>Chasqui</h1>
+          <div class="header-subtitle">WhatsApp relay for Neorgon, through AiSensy</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- .header-right owns margin-left:auto; home icon is always last. -->
+    <div class="header-right">
+      <div class="header-actions">
+        <a class="btn btn--primary btn--sm" data-chat-link href="https://wa.me/15553310925?text=Hola%20Chasqui" target="_blank" rel="noopener noreferrer" data-keep-mobile>Chat on WhatsApp</a>
+        <a class="btn btn--ghost btn--sm" href="https://github.com/energon-a-secas/chasqui-site" target="_blank" rel="noopener noreferrer">Source</a>
+      </div>
+
+
+      <a class="header-home" href="https://neorgon.com/" title="neorgon.com" aria-label="Neorgon home">
+        <svg class="nh-hub-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 4.4 18.58 8.2 18.58 15.8 12 19.6 5.42 15.8 5.42 8.2Z" fill="currentColor" stroke="none"/>
+          <g class="nh-orbit">
+            <path d="M2.47 17.50 A11.0 11.0 0 0 1 14.85 1.37" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round"/>
+            <path d="M21.53 6.50 A11.0 11.0 0 0 1 9.15 22.63" fill="none" stroke="currentColor" stroke-width="1.05" stroke-linecap="round"/>
+            <circle cx="21.71" cy="6.84" r="1.25" fill="currentColor"/>
+            <circle cx="2.29" cy="17.16" r="1.25" fill="currentColor"/>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="relay">
+
+      <!-- The window: a WhatsApp-shaped thread for one number, live from Convex -->
+      <section class="window" aria-labelledby="windowTitle">
+        <header class="window__bar">
+          <div class="window__avatar" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-3.9A8 8 0 1 1 8.4 18.9Z"/><path d="M9 10h.01M12 10h.01M15 10h.01"/></svg>
+          </div>
+          <div class="window__who">
+            <h2 id="windowTitle" class="window__title">Neorgon bot <span class="window__number" id="botNumber">+15553310925</span></h2>
+            <div class="window__status"><span class="dot" id="connDot" data-state="off" aria-hidden="true"></span> <span id="connLabel">connecting</span></div>
+          </div>
+          <button type="button" class="btn btn--ghost btn--sm" id="useBot" title="Put the bot's own number in the composer to browse its thread">Bot thread</button>
+        </header>
+
+        <div class="thread" id="thread" aria-live="polite" aria-label="Relay thread"></div>
+
+        <form class="composer" id="composer" autocomplete="off">
+          <div class="composer__row">
+            <label class="field">
+              <span class="field__label">Destination</span>
+              <input id="phone" type="tel" inputmode="tel" placeholder="+54 9 11 1234 5678" spellcheck="false">
+              <span class="field__hint" id="phoneHint"></span>
+            </label>
+            <label class="field">
+              <span class="field__label">Name</span>
+              <input id="name" type="text" placeholder="Who receives it" maxlength="80">
+              <span class="field__hint">AiSensy stores it on the contact</span>
+            </label>
+          </div>
+          <div class="composer__row">
+            <label class="field">
+              <span class="field__label">API campaign</span>
+              <input id="campaign" type="text" list="campaignList" placeholder="exact name from AiSensy" maxlength="120" spellcheck="false">
+              <datalist id="campaignList"></datalist>
+              <span class="field__hint">Campaigns, Launch, API campaign, set live</span>
+            </label>
+            <label class="field">
+              <span class="field__label">Template parameters</span>
+              <textarea id="params" rows="2" placeholder="one per line, in template order"></textarea>
+              <span class="field__hint">Count must match the template or AiSensy rejects it</span>
+            </label>
+          </div>
+          <div class="composer__actions">
+            <button type="submit" class="btn btn--primary" id="sendBtn" disabled>Send via AiSensy</button>
+            <a class="btn btn--ghost" data-chat-link href="https://wa.me/15553310925?text=Hola%20Chasqui" target="_blank" rel="noopener noreferrer">Open a chat instead</a>
+          </div>
+        </form>
+      </section>
+
+      <!-- The wiring: what the deployment knows, and where this could plug into the fleet -->
+      <aside class="side stack" aria-label="Relay wiring">
+        <section class="card">
+          <h2 class="side__title">Wiring</h2>
+          <dl class="kvs" id="wiring"></dl>
+          <p class="side__stats" id="stats"></p>
+          <div class="result" id="lastResult" hidden></div>
+        </section>
+
+        <section class="card">
+          <h2 class="side__title">Inbound webhook</h2>
+          <p class="side__lead">Paste this in AiSensy under Manage, API key and webhooks. Replies and delivery events land in the thread.</p>
+          <code class="webhook" id="webhookUrl"></code>
+          <button type="button" class="btn btn--secondary btn--sm" id="copyWebhook">Copy URL</button>
+        </section>
+
+        <section class="card">
+          <h2 class="side__title">How a send travels</h2>
+          <ol class="steps">
+            <li>The window calls one Convex action with number, name, campaign and parameters.</li>
+            <li>The action checks the country code, the allowlist and two rate limits, then logs the attempt.</li>
+            <li>It posts to AiSensy's campaign endpoint with the key held on the deployment. The browser never sees it.</li>
+            <li>AiSensy's answer is written back to the thread, verbatim, accepted or refused.</li>
+          </ol>
+        </section>
+
+        <section class="card">
+          <h2 class="side__title">Where it could plug in</h2>
+          <ul class="ideas">
+            <li><strong>Dispatch digest</strong>: one message when a story ships on the fleet feed, campaign <code>dispatch-ship</code>.</li>
+            <li><strong>Echeance alerts</strong>: a credential expires in seven days, campaign <code>echeance-expiry</code>.</li>
+            <li><strong>Balise reports</strong>: a visitor filed a correction, the owner hears about it on the phone.</li>
+            <li><strong>Rappel reminders</strong>: cards due today, sent at the hour the learner picked.</li>
+          </ul>
+          <p class="side__lead">Each is one approved template and one API campaign name. The relay does not change.</p>
+        </section>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Neorgon Footer Kit contract. data-footer-mode: minimal (default) | content | app.
+       Replace the copy with a real note (privacy, data provenance, disclaimer) or drop
+       the text entirely, the kit appends "Part of Neorgon" and any version stamps. -->
+  <footer class="neo-footer" data-footer-mode="app">
+    Numbers typed here are kept in this browser and in the relay log; nothing is shared beyond AiSensy.
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
