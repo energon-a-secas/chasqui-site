@@ -28,6 +28,11 @@ WhatsApp relay for Neorgon: send template notifications through AiSensy and watc
 
 ---
 
+> **Archived proof of concept (2026-09-18).** The relay works end to end, but the AiSensy
+> account is on the Forever Free plan, which excludes API campaigns: every send is answered
+> with `400 No Plan active on assistant!`. The domain was never published. To revive it,
+> read [Plan note](#plan-note) and [Reviving it](#reviving-it) below.
+
 ## Overview
 
 Chasqui is a proof of concept for WhatsApp on Neorgon. Type a number, a name
@@ -68,6 +73,19 @@ key the relay is fully wired and AiSensy answers every send with
 `400 No Plan active on assistant!`, which the thread shows verbatim. Upgrading
 the plan (or starting the Pro trial) is the only change needed; nothing in
 this repo moves.
+
+---
+
+## Reviving it
+
+1. Decide the route: a paid AiSensy plan (or its 14-day Pro trial), or the Meta Cloud API
+   directly with a real number. This repo assumes AiSensy.
+2. Attach a real WhatsApp number. The test number `+1 555 331 0925` reaches at most five
+   verified recipients.
+3. Create one **utility** template (they fit notifications and get approved fastest; marketing
+   templates need explicit opt-in), then follow "Setting it up".
+4. Before real users: put the Neorgon Auth Kit in front of `messages:thread` and
+   `aisensy:send`. Both are public today, bounded only by rate limits.
 
 ---
 

@@ -749,3 +749,20 @@ button:active,
 .ideas { list-style: none; padding-left: 0; margin-bottom: var(--space-3); }
 .ideas strong { color: var(--text-primary); }
 .ideas code { font-size: .8em; }
+
+/* ── Archive notice ─────────────────────────────────────────── */
+.notice {
+  width: 100%;
+  max-width: 1180px;
+  margin: var(--space-4) auto 0;
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--text-sm, .88rem);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  background: color-mix(in srgb, #fbbf24 10%, var(--surface));
+  border: 1px solid color-mix(in srgb, #fbbf24 45%, var(--border));
+  border-radius: 10px;
+}
+.notice strong { color: var(--text-primary); }
+.notice a { color: var(--accent-bright); }
+@media (max-width: 900px) { .notice { margin: var(--space-4) var(--space-4) 0; width: auto; } }

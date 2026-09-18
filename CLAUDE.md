@@ -2,7 +2,9 @@
 
 WhatsApp relay for Neorgon, a proof of concept: the window triggers an AiSensy API campaign for one number through a Convex action and shows every send, refusal and inbound webhook event in a live thread. For the operator deciding whether WhatsApp belongs in the fleet.
 
-**Live:** chasqui.neorgon.com · **Port:** 8890
+**Status:** archived proof of concept since 2026-09-18, never published (no Pages, no DNS). Repo is public. · **Port:** 8890
+
+Why parked, and how to revive: the README banner and `docs/journal/2026-09-18-chasqui-whatsapp-poc.md` in the monorepo root.
 
 ## Run
 
