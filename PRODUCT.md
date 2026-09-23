@@ -2,7 +2,7 @@
 
 **What it is:** WhatsApp relay for Neorgon: send template notifications through AiSensy and watch the thread live.
 
-**Who it is for:** The Neorgon operator deciding whether WhatsApp is worth wiring into the fleet, and the first sites that would send a notification (Dispatch, Echeance, Balise, Rappel).
+**Who it is for:** The Neorgon operator deciding whether WhatsApp is worth wiring into the fleet, and the first sites that would send a notification (Antenne, Echeance, Balise, Rappel).
 
 **Register:** product (a tool someone uses), not brand (a page someone visits).
 
